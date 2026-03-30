@@ -1,13 +1,62 @@
-let num1 = parseFloat(prompt("Ingrese el primer numero"));
-let num2 = parseFloat(prompt("Ingrese el segundo numero"));
-if (isNaN(num1) || isNaN(num2)) {
-    alert("numero invalido");
-}
-else {
-    if (num1 > num2)
-        alert("El numero mayor es: " + num1);
-    else if (num2 > num1)
-        alert("El numero mayor es: " + num2);
-    else
-        alert("Los numeros son iguales");
-}
+let letra = "";
+let num1 = 0;
+let num2 = 0;
+let salir = true;
+do {
+    salir = true;
+    let edad = parseInt(prompt("Ingrese su edad en numeros (0-60)"));
+    switch (edad) {
+        case (edad >= 0 && edad < 18):
+            letra = "X";
+            break;
+        case edad <= 35:
+            letra = "A";
+            break;
+        case edad < 60:
+            letra = "B";
+            break;
+        case 60:
+            letra = "C";
+            break;
+        default:
+            console.log("invecil repite");
+            salir = false;
+            break;
+    }
+} while (salir)
+
+do {
+    let nivel = prompt("Ingrese su nivel (junior, mid, senior)");
+    salir = true;
+    switch (nivel.toLowerCase()) {
+        case "junior":
+            num1 = 1;
+            break;
+        case "mid":
+            num1 = 2;
+            break;
+        case "senior":
+            num1 = 3;
+            break;
+        default:
+            console.log("invecil repite");
+            salir = false;
+    }
+} while (!salir)
+
+do {
+    num2 = parseInt(prompt("Ingrese su numero entero favorito"));
+    salir = true;
+    if (num2 % 2 === 0) {
+        num2 *= 2;
+    }
+    else if (num2 % 2 === 1) {
+        num2 += 5;
+    }
+    else {
+        console.log("invecil repite");
+        salir = false;
+    }
+} while (!salir)
+
+alert(letra + parseStrnum1 + num2)
